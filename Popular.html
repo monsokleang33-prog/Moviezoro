@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovieZone</title>
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+               <img src="images/logo.png" width="150px" height="70px">
+            </a>
+
+            <!-- Mobile Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="movie.html">
+                            Movies
+                        </a>
+                        
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="series.html">
+                            Series
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Popular.html">
+                            Popular
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact11.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Search -->
+                <form class="d-flex search-form" role="search">
+
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-danger" type="submit">
+                        Search
+                    </button>
+                    <button class="btn btn-outline-danger" type="submit">
+                       <a href="login.html"><i class="fa-solid fa-user"></i></a> 
+                    </button>
+
+
+                </form>
+                 <div class="header-right">
+                   <a href="Popular.html"><img src="images/US.jpg" width="50px" height="30px" style="margin-left: 50px;"></a> 
+                    <a href="KH-Popular.html"><img src="images/CAm.jpg" width="50px" height="30px"></a> 
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Carousel Slide -->
+    <div id="carouselExampleIndicators" class="mb-3 carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/bannerseies.jpg" class="d-block w-100" alt="..." width="550px" height="550px">
+            </div>
+            <div class="carousel-item">
+                <img src="images/bannerseries.jpg" class="d-block w-100" alt="..." width="550px" height="550px">
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner4.jpg" class="d-block w-100" alt="..." width="550px" height="550px">
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner2.jpg" class="d-block w-100" alt="..." width="550px" height="550px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section id="movies" class="movies-section">
+
+        <div class="container">
+
+            <!-- Section Title -->
+
+            <div class="section-title">
+
+                 <h2>Popular Movies</h2>
+
+                <p>
+                    Watch home movies now
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P1.PUSS IN BOOTS.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                PUSS IN BOOTS
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P2.PUSS IN BOOTS.jpg " alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               PUSS IN BOOTS 2
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P3.THE MONKEY KING.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                THE MONKEY KING
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P4.Nezha.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Nezha
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P5.Nezha2.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Nezha 2
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P6.Aladdin.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Aladdin
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P7.Dumbo.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Dumbo 
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P8.DISNEY MUFASA.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               DISNEY MUFASA 
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div><div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P9.The Call of the Wild.jpg " alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                The Call of the Wild
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P10.AVATAR.jpg " alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                AVATAR
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P11.Clifford the Big Red Dog.jpg " alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Clifford the Big Red Dog
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P12.Richie Rich.jpg " alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Richie Rich
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+             <div class="row g-4">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P13.Red Notice.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Red Notice
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P14.Fall.jpg " alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Fall
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P15.LANDMAN.jpg " alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               LANDMAN
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P16.The Beekeeper.jpg " alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                The Beekeeper
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P17.lyle, lyle, crocodile.jpg " alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               lyle, lyle, crocodile
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P18.Jack the Giant Slayer.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Jack the Giant Slayer
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P19.Alice in Wonderland.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                              Alice in Wonderland
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P20.Enola Holmes 2.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Enola Holmes
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div><div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P21.Finding Nemo.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Finding Nemo
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P22.Grave of the Fireflies.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                               Grave of the Fireflies
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P23.Edward Scissorhands.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                              Edward Scissorhands
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/P24.One Piece.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                              One Piece
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+                                <i class="bi bi-play-fill"></i>
+                                 <i class="fa-solid fa-eye"></i>
+                                Watch
+                            </button>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+   
+    
+
+
+
+   
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <!-- About -->
+
+                <div class="col-md-6">
+
+                    <h3>
+                        More Information
+                    </h3>
+
+                    <p>
+                       FaceBook
+                    </p>
+                    <p>
+                        Telegram
+                    </p>
+                    <p>
+                        Instagram
+                    </p>
+                    <p>
+                        Messenger
+                    </p>
+
+                </div>
+
+
+                <!-- Menu -->
+
+                <div class="col-md-3">
+
+                    <h5>
+                        Menu
+                    </h5>
+
+                    <a href="Index.html">
+                        Home
+                    </a>
+
+                    <a href="movie.html">
+                        Movies
+                    </a>
+
+                    <a href="series.html">
+                        Series
+                    </a>
+                    <a href="Popular.html">
+                        Popular
+                    </a>
+
+                </div>
+
+
+                <!-- Social -->
+
+                <div class="col-md-3">
+
+                    <h5>
+                        Follow Us
+                    </h5>
+
+                    <div class="social">
+
+                      <a href="https://t.me/monsokleang18"> <img src="images/tele.png" alt="" width="50px" height="50px" border="5"></a>
+                      <a href="https://www.instagram.com/laeng7634?igsh=MW91ajB6bW9lYWVlbg=="> <img src="images/insta.png" alt="" width="50px" height="50px" border="5"></a>
+                      <a href="https://www.facebook.com/share/1BubspaA7v/"> <img src="images/facebook.png" alt="" width="50px" height="50px"border="5" ></a>
+                      <a href="https://t.me/monsokleang18"> <img src="images/chat.png" alt="" width="50px" height="50px"border="5" ></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+           <p><img src="images/SETEC LOGO PNG.png" width="300px" height="100px"></p>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

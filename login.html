@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget PW</title>
+    <style>
+
+        
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+    .search-form {
+        margin: 10px 0 0;
+    }
+
+    .search-form .form-control {
+        width: 100%;
+    }
+
+    .slide {
+        min-height: 500px;
+
+        height: 500px;
+    }
+
+    .slide-content h1 {
+        font-size: 45px;
+    }
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+    .slide {
+        height: 450px;
+
+        min-height: 450px;
+    }
+
+    .slide-content {
+        padding: 20px;
+    }
+
+    .slide-content h1 {
+        font-size: 40px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+
+        max-width: 90%;
+    }
+
+    .movie-card img {
+        height: 300px;
+    }
+
+    .movies-section {
+        padding: 50px 0;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding: 40px 0 20px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 576px) {
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .slide {
+        height: 400px;
+
+        min-height: 400px;
+    }
+
+    .slide-content h1 {
+        font-size: 32px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+
+        margin: 15px 0;
+    }
+
+    .slide-content .btn {
+        padding: 10px 20px;
+    }
+
+    .movie-card img {
+        height: 280px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .social {
+        margin-top: 10px;
+    }
+
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Khmer os bokor;
+            ;
+        }
+
+        body {
+            background-color: #18181b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+             font-family: Khmer os battambang;
+        }
+
+        /* Card Container Main */
+        .card-container {
+            display: flex;
+            background-color: #ffffff;
+            width: 800px;
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Left Side - Banner */
+        .left-banner {
+            background-color: #4f51c0;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .logo-box {
+            width: 220px;
+            height: 220px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo-box img {
+            width: 85%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Right Side - Form */
+        .right-content {
+            width: 60%;
+            padding: 35px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-content h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .right-content p.description {
+            color: #666666;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #dcdcdc;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #4f51c0;
+        }
+
+        /* បន្ថែម Form Row សម្រាប់ដាក់ Input ពីរទន្ទឹមគ្នា */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #4f51c0;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3d3fa1;
+        }
+
+        .back-to-login {
+            text-align: center;
+        }
+
+        .back-to-login a {
+            color: #4f51c0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+        .IP:focus{
+            box-shadow: 0 0 8px 1px rgb(41, 41, 42);
+            outline: none;
+            transition: 0.2s;
+        }
+
+        
+      
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <div class="left-banner">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="POS System Logo">
+            </div>
+        </div>
+
+        
+        <div class="right-content">
+            <h2>Register</h2>
+            <p class="description">Create your new Movie account</p>
+
+            <form action="#">
+                
+                <!-- <div class="form-group">
+                    <label for="store-name">First Name</label>
+                    <input type="text" id="store-name" placeholder="" required class="IP">
+                </div> -->
+                <div class="form-group">
+                    <label for="username">First Name</label>
+                    <input type="text" id="username" placeholder="" required class="IP">
+                </div>
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Last Name</label>
+                    <input type="text" id="username" placeholder="" required class="IP">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your_email@gmail.com" required class="IP">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" required class="IP">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required class="IP">
+                    </div>
+                </div>
+
+                <!-- Button Register -->
+                <button type="submit" class="btn-submit">Register</button>
+
+                <!-- Back to Login -->
+                <div class="back-to-login">
+                    <a href="Index.html">Back to Home page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+
+<html lang="km">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovieZone</title>
+
+    <!-- តំណភ្ជាប់ Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+    
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0b;
+    color: white;
+    overflow-x: hidden;
+    
+}
+
+.block{
+    background: goldenrod;
+    width: 100%;
+    height: auto;
+    font-family:khmer os battambang;
+    font-size: 20px;
+}
+
+/* ================= HEADER ================= */
+
+.navbar {
+    z-index: 9999;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar .nav-link {
+    position: relative;
+    margin: 0 5px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family:khmer os battambang;
+}
+
+
+/* Bottom line */
+
+.navbar .nav-link::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: blue;
+
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover::before {
+    width: 100%;
+}
+
+
+/* Top line */
+
+.navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: red;
+
+    transition: 0.3s;
+    
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-link:hover {
+    color: #ff2020 !important;
+}
+/* =====================tt========== */
+  .select {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            background: rgb(13, 16, 13);
+            color: white;
+            padding: 5px;
+        }
+/* ================= SEARCH ================= */
+
+.search-form {
+    margin-left: 15px;
+}
+
+.search-form .form-control {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+}
+
+.search-form .form-control::placeholder {
+    color: #aaa;
+}
+
+.search-form .form-control:focus {
+    background: #222;
+    color: white;
+
+    border-color: #ff2020;
+
+    box-shadow:
+        0 0 10px rgba(255, 32, 32, 0.3);
+}
+
+/* =========dok klea============ */
+.header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* ដកឃ្លារវាងធាតុ */
+        }
+/* ================= HERO ================= */
+
+.hero {
+    margin-top: 56px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    height: 600px;
+    min-height: 600px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ================= OVERLAY ================= */
+
+.overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+/* ================= SLIDE CONTENT ================= */
+
+.slide-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+}
+
+.slide-content h1 {
+    font-size: 60px;
+
+    font-weight: bold;
+
+    line-height: 1.1;
+
+    text-shadow:
+        3px 3px 10px black;
+}
+
+.slide-content p {
+    max-width: 500px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin: 20px 0;
+}
+
+.slide-content .btn {
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 20px rgba(255, 0, 0, 0.4);
+}
+
+.slide-content .btn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 25px rgba(255, 0, 0, 0.6);
+}
+
+
+/* ================= CAROUSEL ================= */
+
+.carousel-item {
+    transition:
+        transform 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 7%;
+
+    z-index: 5;
+}
+
+.carousel-indicators {
+    z-index: 5;
+}
+
+
+/* ================= MOVIES ================= */
+
+.movies-section {
+    padding: 80px 0;
+
+    background: #0b0b0b;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.section-title p {
+    color: #aaa;
+
+    margin-top: 10px;
+}
+
+
+/* ================= MOVIE CARD ================= */
+
+.movie-card {
+    height: 100%;
+
+    background: #171717;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.7);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+}
+
+.movie-card:hover {
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(255, 0, 0, 0.25);
+}
+
+
+/* ================= MOVIE IMAGE ================= */
+
+.movie-card img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition:
+        transform 0.5s;
+}
+
+.movie-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ================= MOVIE INFO ================= */
+
+.movie-info {
+    padding: 18px;
+
+    flex: 1;
+}
+
+.movie-info h5 {
+    color: white;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    color: #aaa;
+
+    margin-bottom: 15px;
+}
+
+.movie-info span {
+    float: right;
+
+    color: #aaa;
+}
+
+
+/* ================= MOVIE BUTTON ================= */
+
+.movie-info .btn {
+    transition: 0.3s;
+}
+
+.movie-info .btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #050505;
+
+    padding: 60px 0 20px;
+
+    box-shadow:
+        0 -5px 25px rgba(0, 0, 0, 0.8);
+}
+
+footer h3 {
+    color: #ff2020;
+
+    margin-bottom: 15px;
+}
+
+footer h5 {
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #aaa;
+
+    line-height: 1.8;
+}
+
+
+/* Footer Links */
+
+footer a {
+    display: block;
+
+    text-decoration: none;
+
+    color: #aaa;
+
+    margin-bottom: 10px;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+footer a:hover {
+    color: #ff2020;
+
+    padding-left: 5px;
+}
+
+
+/* ================= SOCIAL ================= */
+
+.social {
+    display: flex;
+
+    gap: 15px;
+}
+
+.social a {
+    display: inline-block;
+
+    color: #aaa;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.social a:hover {
+    color: #ff2020;
+
+    padding: 0;
+}
+
+.social a::before,
+.social a::after {
+    display: none;
+}
+
+.social i {
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.social i:hover {
+    color: #ff2020;
+
+    transform:
+        translateY(-5px)
+        scale(1.2);
+}
+/* ========contact=============== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0e14;
+    color: white;
+    font-family:khmer os battambang;
+    font-size: 18px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8%;
+
+    background: #12151d;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e8b84b;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #e8b84b;
+}
+.dfooter{
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+    .search-form {
+        margin: 10px 0 0;
+    }
+
+    .search-form .form-control {
+        width: 100%;
+    }
+
+    .slide {
+        min-height: 500px;
+
+        height: 500px;
+    }
+
+    .slide-content h1 {
+        font-size: 45px;
+    }
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+    .slide {
+        height: 450px;
+
+        min-height: 450px;
+    }
+
+    .slide-content {
+        padding: 20px;
+    }
+
+    .slide-content h1 {
+        font-size: 40px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+
+        max-width: 90%;
+    }
+
+    .movie-card img {
+        height: 300px;
+    }
+
+    .movies-section {
+        padding: 50px 0;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding: 40px 0 20px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 576px) {
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .slide {
+        height: 400px;
+
+        min-height: 400px;
+    }
+
+    .slide-content h1 {
+        font-size: 32px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+
+        margin: 15px 0;
+    }
+
+    .slide-content .btn {
+        padding: 10px 20px;
+    }
+
+    .movie-card img {
+        height: 280px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .social {
+        margin-top: 10px;
+    }
+
+}
+</style>
+
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+
+            <!-- រូបសញ្ញា -->
+
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="images/logo.png" width="150px" height="70px">
+            </a>
+
+            <!-- ប៊ូតុងទូរស័ព្ទ -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="បិទ/បើកម៉ឺនុយ">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- ម៉ឺនុយ -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="KH-Index.html">
+                            ទំព័រដើម
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="KH-movie.html">
+                            ភាពយន្ត
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="KH-Series.html">
+                            រឿងភាគ
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="KH-Popular.html">
+                            ពេញនិយម
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="KH-CONTACT.HTML">
+                            ទំនាក់ទំនង
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <!-- ស្វែងរក -->
+
+                <form class="d-flex search-form" role="search">
+
+                    <input class="form-control me-2" type="search" placeholder="ស្វែងរក" aria-label="ស្វែងរក">
+
+                    <button class="btn btn-outline-danger" type="submit">
+                        ស្វែងរក
+                    </button>
+
+                    <button class="btn btn-outline-danger" type="submit">
+                        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                    </button>
+
+                </form>
+
+                <div class="header-right">
+
+                    <a href="movie.html">
+                        <img src="images/US.jpg" width="50px" height="30px" style="margin-left: 50px;">
+                    </a>
+
+                    <a href="KH-movie.html">
+                        <img src="images/CAm.jpg" width="50px" height="30px">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ស្លាយរូបភាព -->
+
+    <div id="carouselExampleIndicators" class="mb-3 carousel slide">
+
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="ស្លាយទី១"></button>
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="ស្លាយទី២"></button>
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="ស្លាយទី៣"></button>
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="ស្លាយទី៤"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <img src="images/b1.jpg" class="d-block w-100" alt="រូបភាព" width="550px" height="550px">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="images/banner3.jpg" class="d-block w-100" alt="រូបភាព" width="550px" height="550px">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="images/banner4.jpg" class="d-block w-100" alt="រូបភាព" width="550px" height="550px">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="images/banner2.jpg" class="d-block w-100" alt="រូបភាព" width="550px" height="550px">
+
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">មុន</span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">បន្ទាប់</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section id="movies" class="movies-section">
+
+        <div class="container">
+
+            <!-- ចំណងជើងផ្នែក -->
+
+            <div class="section-title">
+
+                <h2>ភាពយន្តគំនូរជីវចល</h2>
+
+                <p>
+                    មើលភាពយន្តនៅផ្ទះឥឡូវនេះ
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A1.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Avengers
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A2.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Dunkirk
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A3.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Eye For An Eye
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A4.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Hacksaw Ridge
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A5.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Avengers
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A6.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Dunkirk
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A7.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Eye For An Eye
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A8.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Hacksaw Ridge
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A9.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Avengers
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A10.png" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Dunkirk
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A11.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Eye For An Eye
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/A12.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Hacksaw Ridge
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section id="movies" class="movies-section">
+
+        <div class="container">
+
+            <!-- ចំណងជើងផ្នែក -->
+
+            <div class="section-title">
+
+                <h2>ភាពយន្តសង្គ្រាម</h2>
+
+                <p>
+                    មើលភាពយន្តនៅផ្ទះឥឡូវនេះ
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/w1.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Avengers
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/w2.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Dunkirk
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/w3.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Eye For An Eye
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/w4.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Hacksaw Ridge
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/w5.HACKSAW RIDGE.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                HACKSAW RIDGE
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W6.KINGDOM OF THE PLANET.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                KINGDOM OF THE PLANET
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W7.The Man in the High Castle.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                The Man in the High Castle
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W8.Pressure.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Pressure
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W9.THE RALWAY MAN.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                THE RALWAY MAN
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W10.USS INDIANAPOLIS.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                USS INDIANAPOLIS
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W11.TIME IS THE ENEMY 1917.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                TIME IS THE ENEMY 1917
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/W12.PATHS OF GLORY.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                PATHS OF GLORY
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section id="movies" class="movies-section">
+
+        <div class="container">
+
+            <!-- ចំណងជើងផ្នែក -->
+
+            <div class="section-title">
+
+                <h2>ភាពយន្តកំប្លែង</h2>
+
+                <p>
+                    មើលភាពយន្តនៅផ្ទះឥឡូវនេះ
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+
+                <!-- Movie 1 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C1.Mr. Bean's Holiday.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Mr. Bean's Holiday
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C2.Amigos en apuros.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Amigos en apuro
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C3.Evan Almighty.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Evan Almighty
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C4.Bruce Almighty.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Bruce Almighty
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C5.Little Man.jpg " alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Little Man
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C7.Home Alone.jpg " alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Home Alone
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C6.Home Alone 2.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Home Alone 2
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C8.Grown Ups.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Grown Ups
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C9.The Fall Guy.jpg" alt="Avengers">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                The Fall Guy
+                            </h5>
+
+                            <p>
+                                ⭐ 8.5
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 2 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C10.FERDINAND.jpg" alt="Dunkirk">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                FERDINAND
+                            </h5>
+
+                            <p>
+                                ⭐ 9.0
+                                <span>2026</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 3 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C11.The Queen's Corgi.jpg" alt="Eye For An Eye">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                The Queen's Corgi
+                            </h5>
+
+                            <p>
+                                ⭐ 8.2
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movie 4 -->
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="movie-card">
+
+                        <img src="images/C12.Toy Story 3.jpg" alt="Hacksaw Ridge">
+
+                        <div class="movie-info">
+
+                            <h5>
+                                Toy Story 3
+                            </h5>
+
+                            <p>
+                                ⭐ 8.8
+                                <span>2025</span>
+                            </p>
+
+                            <button class="btn btn-danger btn-sm">
+
+                                <i class="bi bi-play-fill"></i>
+                                <i class="fa-solid fa-eye"></i>
+                                មើល
+
+                            </button>
+
+                            <span><i class="fa-solid fa-cart-shopping"></i></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+
+                <!-- អំពី -->
+
+                <div class="col-md-6">
+
+                    <h3>
+                        ព័ត៌មានបន្ថែម
+                    </h3>
+
+                    <p>
+                        FaceBook
+                    </p>
+
+                    <p>
+                        Telegram
+                    </p>
+
+                    <p>
+                        Instagram
+                    </p>
+
+                    <p>
+                        Messenger
+                    </p>
+
+                </div>
+
+
+                <!-- ម៉ឺនុយ -->
+
+                <div class="col-md-3">
+
+                    <h5>
+                        ម៉ឺនុយ
+                    </h5>
+
+                    <a href="Index.html">
+                        ទំព័រដើម
+                    </a>
+
+                    <a href="movie.html">
+                        ភាពយន្ត
+                    </a>
+
+                    <a href="series.html">
+                        រឿងភាគ
+                    </a>
+
+                    <a href="Popular.html">
+                        ពេញនិយម
+                    </a>
+
+                </div>
+
+
+                <!-- បណ្ដាញសង្គម -->
+
+                <div class="col-md-3">
+
+                    <h5>
+                        តាមដានពួកយើង
+                    </h5>
+
+                    <div class="social">
+
+                        <a href="https://t.me/monsokleang18">
+                            <img src="images/tele.png" alt="" width="50px" height="50px" border="5">
+                        </a>
+
+                        <a href="https://www.instagram.com/laeng7634?igsh=MW91ajB6bW9lYWVlbg==">
+                            <img src="images/insta.png" alt="" width="50px" height="50px" border="5">
+                        </a>
+
+                        <a href="https://www.facebook.com/share/1BubspaA7v/">
+                            <img src="images/facebook.png" alt="" width="50px" height="50px" border="5">
+                        </a>
+
+                        <a href="https://t.me/monsokleang18">
+                            <img src="images/chat.png" alt="" width="50px" height="50px" border="5">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+            <p>
+                <img src="images/SETEC LOGO PNG.png" width="300px" height="100px">
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

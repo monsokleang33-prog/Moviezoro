@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me - MovieZone</title>
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ================= RESET ================= */
+
+        * {
+            font-size: 23px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #0b0e14;
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            position: relative;
+        }
+
+
+
+
+        /* =========dok klea============ */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* ដកឃ្លារវាងធាតុ */
+        }
+
+        /* ================= HEADER ================= */
+
+        .navbar {
+            z-index: 9999;
+            position: sticky;
+
+            top: 0;
+
+
+
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+        }
+
+        .navbar .nav-link {
+            position: relative;
+            margin: 0 5px;
+            transition: 0.3s;
+            font-size: 20px;
+        }
+
+
+        /* Bottom line */
+
+        .navbar .nav-link::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: blue;
+
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover::before {
+            width: 100%;
+        }
+
+
+        /* Top line */
+
+        .navbar .nav-link::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+            top: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: red;
+
+            transition: 0.3s;
+
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar .nav-link:hover {
+            color: #ff2020 !important;
+        }
+
+
+        /* ================= SEARCH ================= */
+
+        .search-form {
+            margin-left: 15px;
+        }
+
+        .search-form .form-control {
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .search-form .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .search-form .form-control:focus {
+            background: #222;
+            color: white;
+
+            border-color: #ff2020;
+
+            box-shadow:
+                0 0 10px rgba(255, 32, 32, 0.3);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            margin-top: 56px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 600px;
+            min-height: 600px;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        /* Logo */
+
+        .logo {
+            font-size: 28px;
+
+            font-weight: bold;
+
+            color: rgb(14, 3, 3);
+        }
+
+
+        .logo span {
+            color: #e8b84b;
+        }
+
+
+        /* Menu */
+
+        .menu {
+            display: flex;
+
+            gap: 30px;
+
+            align-items: center;
+        }
+
+
+        .menu a {
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .menu a:hover,
+        .menu a.active {
+            color: #e8b84b;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+
+            min-height: calc(100vh - 70px);
+
+            padding: 80px 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        /* Main Container */
+
+        .contact-container {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            padding: 45px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.3fr;
+
+            gap: 50px;
+
+            background: #12151d;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+                0 0 40px rgba(200, 30, 58, 0.15);
+        }
+
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        /* Profile Image */
+
+        .profile img {
+
+            width: 190px;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #c81e3a;
+
+            padding: 5px;
+
+            background: #0b0e14;
+
+            box-shadow:
+                0 0 30px rgba(200, 30, 58, 0.5);
+
+            transition: 0.4s;
+        }
+
+
+        .profile img:hover {
+
+            transform: scale(1.05);
+
+            border-color: #e8b84b;
+
+            box-shadow:
+                0 0 35px rgba(232, 184, 75, 0.5);
+        }
+
+
+        /* Name */
+
+        .profile h1 {
+
+            margin-top: 25px;
+
+            font-size: 30px;
+        }
+
+
+        /* Job */
+
+        .profile>p {
+
+            margin-top: 10px;
+
+            color: #e8b84b;
+        }
+
+
+        /* Description */
+
+        .profile .description {
+
+            max-width: 350px;
+
+            margin-top: 20px;
+
+            color: #999;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= CONTACT ME ================= */
+
+        .contact-me {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .contact-me h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-me>p {
+
+            color: #999;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= SOCIAL BOX ================= */
+
+        .social-box {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            width: 100%;
+        }
+
+
+        /* Social Item */
+
+        .social-item {
+
+            min-height: 110px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            background: #0b0e14;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: white;
+
+            transition: 0.3s;
+        }
+
+        /* ================= CHAT ================= */
+
+        .chat {
+            padding: 80px 20px;
+            font-family: khmer os battambang;
+            background: #0e1118;
+        }
+
+        .chat {
+            padding: 80px 20px;
+
+            background: #0e1118;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 650px;
+
+            margin: auto;
+
+            background: #12151d;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-container h2 {
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .chat-container h2 i {
+            color: #e8b84b;
+        }
+
+        .chat-container>p {
+            color: #888;
+
+            margin-bottom: 30px;
+        }
+
+        /* ================= FORM ================= */
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #ddd;
+        }
+
+        .input-box input,
+        .input-box textarea {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            background: #0b0e14;
+            color: white;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .input-box textarea {
+            resize: vertical;
+        }
+
+        .input-box input:focus,
+        .input-box textarea:focus {
+            border-color: #c81e3a;
+
+            box-shadow:
+                0 0 10px rgba(200, 30, 58, 0.2);
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .button1 {
+            width: 100%;
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: linear-gradient(90deg,
+                    #c81e3a,
+                    #e8b84b);
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .button1:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px rgba(200, 30, 58, 0.3);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #080a0f;
+
+            color: #777;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.05);
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 850px) {
+
+            .contact-container {
+
+                grid-template-columns: 1fr;
+
+                max-width: 700px;
+            }
+
+
+            .profile {
+
+                padding-bottom: 20px;
+            }
+
+
+            .social-box {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                padding: 20px;
+            }
+
+
+            .menu {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .menu a {
+
+                font-size: 14px;
+            }
+
+
+            .contact {
+
+                padding: 40px 15px;
+            }
+
+
+            .contact-container {
+
+                padding: 25px 20px;
+
+                gap: 30px;
+            }
+
+
+            .profile img {
+
+                width: 150px;
+
+                height: 150px;
+            }
+
+
+            .profile h1 {
+
+                font-size: 25px;
+            }
+
+
+            .contact-me h2 {
+
+                font-size: 27px;
+            }
+
+
+            .social-box {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+
+            .social-item {
+
+                min-height: 95px;
+            }
+
+
+            .social-item i {
+
+                font-size: 25px;
+            }
+        }
+
+
+        /* ================= SMALL PHONE ================= */
+
+        @media (max-width: 400px) {
+
+            .logo {
+
+                font-size: 24px;
+            }
+
+
+            .menu {
+
+                gap: 10px;
+            }
+
+
+            .menu a {
+
+                font-size: 13px;
+            }
+
+
+            .contact-container {
+
+                padding: 20px 15px;
+            }
+
+
+            .social-item span {
+
+                font-size: 12px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="images/logo.png" width="150px" height="70px">
+                <!-- 🎬 MovieZone -->
+            </a>
+
+            <!-- Mobile Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="movie.html">
+                            Movies
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="series.html">
+                            Series
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Popular.html">
+                            Popular
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact11.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Search -->
+                <form class="d-flex search-form" role="search">
+
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-danger" type="submit">
+                        Search
+                    </button>
+                    <button class="btn btn-outline-danger" type="submit">
+                        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                    </button>
+
+
+                </form>
+                <div class="header-right">
+                    <a href="Contact11.html"><img src="images/US.jpg" width="50px" height="30px"
+                            style="margin-left: 50px;"></a>
+                    <a href="KH-CONTACT.HTML"><img src="images/CAm.jpg" width="50px" height="30px"></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact">
+
+
+        <div class="contact-container">
+
+
+
+            <!-- ================= PROFILE ================= -->
+
+            <div class="profile">
+                <img src="images/picAi.jpg" alt="My Photo">
+                <h1>
+                    Mon Sokleang
+                </h1>
+
+
+                <p>
+                    Web Developer
+                </p>
+
+
+                <p class="description">
+
+                    Hello! I am the creator of this website
+
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= CONTACT ME ================= -->
+
+            <div class="contact-me">
+
+
+                <h2>
+                    Contact Me
+                </h2>
+
+
+                <p>
+                    Pleace contact me
+                </p>
+
+
+
+                <!-- ================= SOCIAL ================= -->
+
+                <div class="social-box">
+
+                    <a href="https://t.me/monsokleang18"> <img src="images/tele.png" alt="" width="100px" height="100px"
+                            border="5"></a>
+                    <a href="https://www.instagram.com/laeng7634?igsh=MW91ajB6bW9lYWVlbg=="> <img src="images/insta.png"
+                            alt="" width="100px" height="100px" border="5"></a>
+                    <a href="https://www.facebook.com/share/1BubspaA7v/"> <img src="images/facebook.png" alt=""
+                            width="100px" height="100px" border="5"></a>
+                    <a href="https://t.me/monsokleang18"> <img src="images/chat.png" alt="" width="100px" height="100px"
+                            border="5"></a>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ================= CHAT ================= -->
+    <section class="chat" id="chat">
+
+        <div class="chat-container">
+
+            <h2>
+                <i class="fa-solid fa-comment-dots"></i>
+                Chat With Me
+            </h2>
+
+            <p>
+                Please fill in the information below to send me a message.
+            </p>
+
+            <form>
+
+                <div class="input-box">
+
+                    <label>Name</label>
+
+                    <input type="text" placeholder="Input your name" required>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label>Email</label>
+
+                    <input type="email" placeholder="example@gmail.com" required>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label>Message</label>
+
+                    <textarea rows="5" placeholder="Write your message..." required></textarea>
+
+                </div>
+                <div class="button1">
+                    Send Message
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p><img src="images/SETEC LOGO PNG.png" width="300px" height="100px"></p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
